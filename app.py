@@ -8,7 +8,7 @@ from utils.scoring import calculate_final_score
 # ---------------- GEMINI API ----------------
 import google.generativeai as genai
 
-GEMINI_API_KEY = "AIzaSyBe0Ps1rle_Cn_wNIOxeUqK1lqBVgAaG9M"
+GEMINI_API_KEY = "AIzaSyDBsnMccjz7tKM75zk3F3ObFg2aJ7IO4RM"
 
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
