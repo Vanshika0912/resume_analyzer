@@ -4,7 +4,15 @@ import json
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-nlp = spacy.load("en_core_web_sm")
+from spacy.cli import download
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+
+# nlp = spacy.load("en_core_web_sm")
 
 # -----------------------------------------------------
 # Load skill dataset
