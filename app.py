@@ -7,8 +7,14 @@ from utils.scoring import calculate_final_score
 
 # ---------------- GEMINI API ----------------
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
 
-GEMINI_API_KEY = "AIzaSyDBsnMccjz7tKM75zk3F3ObFg2aJ7IO4RM"
+# Load environment variables from .env file
+load_dotenv()
+
+# Gemini API Configuration
+GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
 
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
